@@ -1,0 +1,49 @@
+$shadow-color: #6b6b6b;
+
+.first-three {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.tile {
+    background-color: white;
+    display: inline-block;
+    padding: 5px 15px;
+    margin: 10px;
+    border-radius: 5px;
+
+    &:hover {
+        transition: box-shadow 1s ease;
+        box-shadow: 0 0.5em 1em -0.125em $shadow-color;
+    }
+}
+
+.title {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 2em;
+    font-weight: bolder;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    font-size: 1.4em;
+}
+
+.vertical-tiles {
+    @extend .first-three
+}
+
+.v-tile {
+    background-color: white;
+    padding: 5px 10px;
+    margin-bottom: 1em;
+    border-radius: 5px;
+
+    img {
+        width: 100%;
+    }
+}
+
+.rest-of-tiles {
+    @extend .first-three
+}

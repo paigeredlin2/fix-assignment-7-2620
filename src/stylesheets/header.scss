@@ -1,0 +1,134 @@
+$blue-color: rgb(123, 204, 238);
+$base-color: #eee;
+$shadow-color: #6b6b6b;
+$new-green: rgb(77, 231, 187);
+$invisible-blue: rgb(40, 156, 240);
+
+@mixin bigTextFormat($color1, $color2) {
+    padding: 5em;
+    background-color: $color1;
+    color: $color2;
+    text-align: center;
+
+    h1 {
+        font-weight: bolder;
+    }
+
+    p {
+        font-size: 1.4em;
+    }
+}
+
+.bigText1 {
+    @include bigTextFormat($blue-color, white)
+}
+
+.bigText2 {
+    @include bigTextFormat($base-color, black)
+}
+
+.jumbotron {
+    background-color: $blue-color;
+    margin: 0;
+    padding: 1em;
+}
+
+nav {
+    ul {
+        list-style-type: none;
+        display: inline;
+        display: flex;
+        margin: 1em 4em;
+        padding: 0;
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            flex: 3;
+
+            li {
+                flex-grow: 1;
+                flex-shrink: 0;
+                padding: 8px 16px;
+            }
+        }
+
+        .logo {
+            flex: 4;
+
+            .fa-tape {
+                padding: 10px;
+                border-radius: 5px;
+
+                &:hover {
+                    transition: background-color 1s ease;
+                    background-color: white;
+                }
+            }
+        }
+    }
+}
+
+.home {
+    border-bottom: 1px solid $invisible-blue;
+
+    a {
+        text-decoration: none;
+        color: $invisible-blue;
+    }
+}
+
+.basic {
+    border-bottom: 1px solid $base-color;
+
+    a {
+        text-decoration: none;
+        color: black;
+        transition: border-bottom;
+    }
+
+    &:hover {
+        border-bottom-color: black;
+    }
+
+}
+
+.viewSource {
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 5px;
+    transition: border;
+    margin-left: 5px;
+    color: white;
+
+    a {
+        text-decoration: none;
+        color: white;
+    }
+
+    &:hover {
+        transition: all 1s ease;
+        color: black;
+        border: 1px solid black;
+
+        a {
+            transition: all 1s ease;
+            color: black;
+        }
+    }
+}
+
+.new {
+    text-align: center;
+    background-color: white;
+    padding: 1em 0;
+
+    .newText {
+        background-color: $new-green;
+        border-radius: 5px;
+        padding: 2px 4px;
+        margin-right: 7px;
+    }
+
+    box-shadow: 0 0.5em 1em -0.125em $shadow-color;
+}
